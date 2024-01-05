@@ -1,0 +1,16 @@
+<!-- expense-list.component.html -->
+<div class="expense-list">
+    <h2>Expense List</h2>
+    <mat-form-field>
+        <mat-label>Max Length</mat-label>
+        <mat-select [(value)]="maxLength">
+            <mat-option value="5">5</mat-option>
+            <mat-option value="10">10</mat-option>
+            <mat-option value="15">15</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <ul>
+        <li *ngFor="let expense of expenses | slice:0:maxLength">{{ expense }}</li>
+    </ul>
+    <button mat-button (click)="expandList()">Expand</button>
+</div>
